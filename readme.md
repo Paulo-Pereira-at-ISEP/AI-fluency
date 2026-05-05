@@ -14,56 +14,77 @@ The goal is to turn the agent into a team member that knows and respects project
 AI-fluency/
 ├── readme.md                        ← this file
 ├── python/
-│   └── github/
-│       ├── copilot-instructions.md          # Root instructions (architecture, commits, references)
-│       ├── python-coding.instructions.md    # Python coding conventions (PEP 8, typing, async)
-│       ├── documentation.instructions.md    # Docstrings, README, CHANGELOG, ADRs
-│       ├── testing.instructions.md          # pytest, fixtures, security tests
-│       ├── project-structure.instructions.md# src/ layout, pyproject.toml, CI/CD
-│       ├── security.instructions.md         # OWASP Top 10, validation, auth, secrets
-│       ├── code-review.agent.md             # Automated code review agent
-│       └── code-modernization.agent.md      # Python 3.7 → 3.11+ migration agent
+│   └── .github/
+│       ├── copilot-instructions.md              # Root instructions (architecture, commits, references)
+│       ├── instructions/
+│       │   ├── python-coding.instructions.md    # Python coding conventions (PEP 8, typing, async)
+│       │   ├── documentation.instructions.md    # Docstrings, README, CHANGELOG, ADRs
+│       │   ├── testing.instructions.md          # pytest, fixtures, security tests
+│       │   ├── project-structure.instructions.md# src/ layout, pyproject.toml, CI/CD
+│       │   └── security.instructions.md         # OWASP Top 10, validation, auth, secrets
+│       └── prompts/
+│           ├── code-review.agent.md             # Automated code review agent
+│           └── code-modernization.agent.md      # Python 3.7 → 3.11+ migration agent
 │
 ├── c-sharp/
-│   └── github/
-│       ├── copilot-instructions.md          # Root instructions (.NET 8, architecture, commits)
-│       ├── csharp-coding.instructions.md    # C# 10–12 conventions (naming, DI, async, LINQ)
-│       ├── documentation.instructions.md    # XML doc comments, Swagger, DocFX, ADRs
-│       ├── testing.instructions.md          # xUnit, FluentAssertions, security tests
-│       ├── project-structure.instructions.md# Clean Architecture, Central Package Mgmt, Docker
-│       ├── security.instructions.md         # OWASP Top 10, ASP.NET Core hardening
-│       ├── code-review.agent.md             # Automated code review agent
-│       └── code-modernization.agent.md      # .NET Framework → .NET 8 migration agent
+│   └── .github/
+│       ├── copilot-instructions.md              # Root instructions (.NET 8, architecture, commits)
+│       ├── instructions/
+│       │   ├── csharp-coding.instructions.md    # C# 10–12 conventions (naming, DI, async, LINQ)
+│       │   ├── documentation.instructions.md    # XML doc comments, Swagger, DocFX, ADRs
+│       │   ├── testing.instructions.md          # xUnit, FluentAssertions, security tests
+│       │   ├── project-structure.instructions.md# Clean Architecture, Central Package Mgmt, Docker
+│       │   └── security.instructions.md         # OWASP Top 10, ASP.NET Core hardening
+│       └── prompts/
+│           ├── code-review.agent.md             # Automated code review agent
+│           └── code-modernization.agent.md      # .NET Framework → .NET 8 migration agent
 │
 ├── javascript/
-│   └── github/
-│       ├── copilot-instructions.md          # Root instructions (TypeScript, Angular 17+, commits)
-│       ├── javascript-coding.instructions.md# TS/JS/Angular conventions (signals, DI, RxJS)
-│       ├── documentation.instructions.md    # TSDoc, Compodoc, README, CHANGELOG, ADRs
-│       ├── testing.instructions.md          # Jest, Angular TestBed, Playwright, security
-│       ├── project-structure.instructions.md# Angular layout, ESLint flat config, CI/CD, Docker
-│       ├── security.instructions.md         # OWASP Top 10, XSS, CSP, Angular security
-│       ├── code-review.agent.md             # Automated code review agent
-│       └── code-modernization.agent.md      # AngularJS/JS → Angular 17+/TS migration agent
+│   └── .github/
+│       ├── copilot-instructions.md              # Root instructions (TypeScript, Angular 17+, commits)
+│       ├── instructions/
+│       │   ├── javascript-coding.instructions.md# TS/JS/Angular conventions (signals, DI, RxJS)
+│       │   ├── documentation.instructions.md    # TSDoc, Compodoc, README, CHANGELOG, ADRs
+│       │   ├── testing.instructions.md          # Jest, Angular TestBed, Playwright, security
+│       │   ├── project-structure.instructions.md# Angular layout, ESLint flat config, CI/CD, Docker
+│       │   └── security.instructions.md         # OWASP Top 10, XSS, CSP, Angular security
+│       └── prompts/
+│           ├── code-review.agent.md             # Automated code review agent
+│           └── code-modernization.agent.md      # AngularJS/JS → Angular 17+/TS migration agent
+│
+├── typescript/
+│   └── .github/
+│       ├── copilot-instructions.md              # Root instructions (TypeScript 5.x, Node.js 20+, commits)
+│       ├── instructions/
+│       │   ├── typescript-coding.instructions.md# Type system, generics, Zod, ESM, NestJS patterns
+│       │   ├── documentation.instructions.md    # TSDoc, OpenAPI 3.1, README, CHANGELOG, ADRs
+│       │   ├── testing.instructions.md          # Vitest, Testcontainers, security tests
+│       │   ├── project-structure.instructions.md# src/modules/ layout, tsup, ESLint flat config, Docker
+│       │   └── security.instructions.md         # OWASP Top 10, Zod validation, JWT, Helmet, RBAC
+│       └── prompts/
+│           ├── code-review.agent.md             # Automated code review agent
+│           └── code-modernization.agent.md      # JS→TS, CJS→ESM, callbacks→async, Jest→Vitest agent
 │
 └── java/
-    └── github/
-        ├── copilot-instructions.md          # Root instructions (Java 21, Spring Boot 3.x, commits)
-        ├── java-coding.instructions.md      # Java 21 conventions (records, sealed, pattern matching)
-        ├── documentation.instructions.md    # Javadoc, OpenAPI/Swagger, README, CHANGELOG, ADRs
-        ├── testing.instructions.md          # JUnit 5, Mockito, AssertJ, Testcontainers, ArchUnit
-        ├── project-structure.instructions.md# Hexagonal architecture, Maven/Gradle, CI/CD, Docker
-        ├── security.instructions.md         # OWASP Top 10, Spring Security, deserialization, Log4Shell
-        ├── code-review.agent.md             # Automated code review agent
-        └── code-modernization.agent.md      # Java 8/11 → 21 + Spring Boot 2 → 3 migration agent
+    └── .github/
+        ├── copilot-instructions.md              # Root instructions (Java 21, Spring Boot 3.x, commits)
+        ├── instructions/
+        │   ├── java-coding.instructions.md      # Java 21 conventions (records, sealed, pattern matching)
+        │   ├── documentation.instructions.md    # Javadoc, OpenAPI/Swagger, README, CHANGELOG, ADRs
+        │   ├── testing.instructions.md          # JUnit 5, Mockito, AssertJ, Testcontainers, ArchUnit
+        │   ├── project-structure.instructions.md# Hexagonal architecture, Maven/Gradle, CI/CD, Docker
+        │   └── security.instructions.md         # OWASP Top 10, Spring Security, deserialization, Log4Shell
+        └── prompts/
+            ├── code-review.agent.md             # Automated code review agent
+            └── code-modernization.agent.md      # Java 8/11 → 21 + Spring Boot 2 → 3 migration agent
 ```
 
 ### File types
 
 | Suffix | Purpose | When it is loaded |
 |--------|---------|-------------------|
-| `.instructions.md` | Rules and conventions the agent must follow | Automatically, as background context |
-| `.agent.md` | Defines a specialised agent with inputs, outputs, and behaviour | When the user invokes the agent or requests a specific task |
+| `.instructions.md` | Rules and conventions the agent must follow | Automatically, as background context (place in `.github/instructions/`) |
+| `.agent.md` | Defines a specialised agent with inputs, outputs, and behaviour | When the user invokes the agent or requests a specific task (place in `.github/prompts/`) |
 
 ---
 
@@ -90,20 +111,23 @@ The instructions act as a living repository of technical decisions (ADRs, librar
 
 ### Step 1 — Copy the appropriate subdirectory
 
-Copy the `github/` folder from the desired language subdirectory into the root of your repository under `.github/`:
+Copy the `.github/` folder from the desired language subdirectory into the root of your repository:
 
-```
+```bash
 # For a Python project
-cp -r python/github/ <my-project>/.github/
+cp -r python/.github/ <my-project>/.github/
 
 # For a C# project
-cp -r c-sharp/github/ <my-project>/.github/
+cp -r c-sharp/.github/ <my-project>/.github/
 
 # For a JavaScript / TypeScript / Angular project
-cp -r javascript/github/ <my-project>/.github/
+cp -r javascript/.github/ <my-project>/.github/
+
+# For a TypeScript / Node.js / NestJS project
+cp -r typescript/.github/ <my-project>/.github/
 
 # For a Java / Spring Boot project
-cp -r java/github/ <my-project>/.github/
+cp -r java/.github/ <my-project>/.github/
 ```
 
 The resulting structure in the target project will be:
@@ -111,14 +135,16 @@ The resulting structure in the target project will be:
 ```
 my-project/
 ├── .github/
-│   ├── copilot-instructions.md
-│   ├── python-coding.instructions.md   (or csharp-coding / javascript-coding)
-│   ├── documentation.instructions.md
-│   ├── testing.instructions.md
-│   ├── project-structure.instructions.md
-│   ├── security.instructions.md
-│   ├── code-review.agent.md
-│   └── code-modernization.agent.md
+│   ├── copilot-instructions.md          ← loaded automatically in every session
+│   ├── instructions/
+│   │   ├── *-coding.instructions.md     ← language conventions
+│   │   ├── documentation.instructions.md
+│   │   ├── testing.instructions.md
+│   │   ├── project-structure.instructions.md
+│   │   └── security.instructions.md
+│   └── prompts/
+│       ├── code-review.agent.md
+│       └── code-modernization.agent.md
 ├── src/
 ├── tests/
 └── ...
@@ -138,8 +164,8 @@ Edit the files to reflect the specifics of your project:
 Commit the instruction files to the repository. They are code — they must be versioned, reviewed in PRs, and evolve with the project.
 
 ```bash
-git add .github/*.md
-git commit -m "docs: add LLM agent instructions for [Python|C#|JavaScript|Java]"
+git add .github/
+git commit -m "docs: add LLM agent instructions for [Python|C#|JavaScript|Java|TypeScript]"
 ```
 
 ---
@@ -153,22 +179,24 @@ GitHub Copilot automatically loads instruction files placed in `.github/`:
 | File | Behaviour |
 |------|-----------|
 | `.github/copilot-instructions.md` | Loaded **always** as background context in every interaction |
-| `.github/*.instructions.md` | Loaded automatically when relevant to the task |
-| `.github/*.agent.md` | Available as invocable agents (e.g. `@code-review`) |
+| `.github/instructions/*.instructions.md` | Loaded automatically when the `applyTo` glob matches the active file |
+| `.github/prompts/*.agent.md` | Available as invocable agents (e.g. `@code-review`) in agent mode |
 
 > **Note**: The YAML frontmatter at the top of each file (the `description` field) helps Copilot decide when to include the file in the context.
 
 ### Cursor
 
-In Cursor, place the files in the `.cursor/rules/` folder or reference them in `.cursorrules`:
+In Cursor, place the instruction files in the `.cursor/rules/` folder (`.mdc` extension is also supported):
 
 ```
 .cursor/
 └── rules/
     ├── copilot-instructions.md
-    ├── python-coding.instructions.md
+    ├── *-coding.instructions.md
     └── ...
 ```
+
+You can copy from the `instructions/` folder of your language: `cp language/.github/instructions/*.instructions.md <my-project>/.cursor/rules/`
 
 ### Other agents (Cline, Aider, Continue, etc.)
 
@@ -298,7 +326,10 @@ Incremental corrections referencing specific instructions are more effective tha
 To add support for a new language or framework:
 
 1. Create a new subdirectory at the repo root (e.g. `go/`, `rust/`, `kotlin/`).
-2. Inside it, create the `github/` folder with files following the same structure.
+2. Inside it, create the `.github/` folder with the following layout:
+   - `.github/copilot-instructions.md` — workspace-level entry point
+   - `.github/instructions/` — all `*.instructions.md` files with `applyTo` frontmatter
+   - `.github/prompts/` — all `*.agent.md` files
 3. Adapt all content to the target language, maintaining security coverage.
 4. Update this `readme.md` with the new entry in the directory tree.
 
